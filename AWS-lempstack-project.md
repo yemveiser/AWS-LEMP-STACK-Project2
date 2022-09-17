@@ -1,5 +1,5 @@
 # AWS LEMP STACK IMPLEMENTATION
- ## **This project shows how to implement LAMP**(Linux-Nginx-Mysql-Php) on AWS
+ ## **This project shows how to implement LEMP**(Linux-Nginx-Mysql-Php) on AWS
 
  ## .......................................Installing NGINX Webserver......................................
 --- 
