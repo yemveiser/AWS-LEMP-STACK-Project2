@@ -17,7 +17,7 @@ Run Nginx package installation
 
  ![Nginx Status](./Images/Nginx_service_status.JPG)
 
- Verify the web server is reaachable from the localhost
+ Verify the web server is reachable from the localhost
 
 ```
  curl http://localhost:80
@@ -31,7 +31,7 @@ or
 
 Get IPV4 ip address by using the command  
 
-curl http:// 169.254.169.254/latest/meta-data/public-ipv4
+`curl http:// 169.254.169.254/latest/meta-data/public-ipv4`
 
 When you open a browser and input the public ip address outputed by the previous command you should get a welcome page from Nginx.
 
@@ -41,7 +41,7 @@ When you open a browser and input the public ip address outputed by the previous
 
 ## .......................INSTALLING MYSQL..............................
 ---
-Install MYSQL packahe using apt command
+Install MYSQL package using apt command
 
 `sudo apt install mysql-server`
 
@@ -97,7 +97,7 @@ Open a new configuration file in Nginx’s sites-available directory
 
 After editing, save and close the file. If you’re using nano, you can do so by typing `CTRL+X` and then `y` and `ENTER` to confirm.
 
-:ets activate the configuration by linking the config file from Nginx’s sites-enabled directory, This will tell Nginx to use the configuration next time it is reloaded:
+Lets activate the configuration by linking the config file from Nginx’s sites-enabled directory, This will tell Nginx to use the configuration next time it is reloaded:
 
 `sudo ln -s /etc/nginx/sites-available/projectLEMP /etc/nginx/sites-enabled/`
 
@@ -120,7 +120,7 @@ Create an index.html file in the location /var/www/projectLEMP so that we can te
 ```
 sudo echo 'Hello LEMP from hostname' $(curl -s http://169.254.169.254/latest/meta-data/public-hostname) 'with public IP' $(curl -s http://169.254.169.254/latest/meta-data/public-ipv4) > /var/www/projectLEMP/index.html
 ```
-Now ;et's try to open your website URL from the browser using IP address or DNS name:
+Now let's try to open your website URL from the browser using IP address or DNS name:
 
 `http://<Public-IP-Address>:80`  or  `http://<Public-DNS-Name>:80`
 
@@ -229,5 +229,10 @@ Mow lets access the todo_list.php page from our web browser
 ![todo_list php webpage](./Images/todolist_php.JPG)
 
 If you get an output like the picture above it shows the php environment can successfuy interaxt with the mysql database.
+
+**NOTE!**
+ Make sure the `php-fpm.sock` version referenced in the `etc/nginx/sites-available/projectLEMP` and `etc/nginx/sites-enabled/projectLEMP` files is the same version as the one installed in the `/var/run/php/` folder.
+
+ 
 
 ### ***Thank you !!!***
